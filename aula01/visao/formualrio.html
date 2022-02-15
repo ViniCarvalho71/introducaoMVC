@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../libs/css/bootstrap.css">
+    <title>FormMVC</title>
+</head>
+<body>
+    <h1 class="text-center">Diga-me seu nome e seu animal preferido</h1>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-6 col-md4">
+            <form id="form">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Seu Nome</label>
+                  <input type="text" class="form-control" id="nome" aria-describedby="nome">
+                </div>
+                <div class="mb-3">
+                  <label for="animal" class="form-label">Qual o seu animal preferido?</label>
+                  <select class="form-select" id="animal" aria-label="Default select example">
+                    <option selected>Selecione um</option>
+                    <option value="1">Chachorro</option>
+                    <option value="2">Gato</option>
+                    <option value="3">Peixe</option>
+                  </select>
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-send">Enviar</button>
+              </form>
+            </div>
+            </div>
+    </div>
+
+
+<script src="../../libs/js/jquery-3.6.0.js"></script>
+<script src="../../libs/js/bootstrap.js"></script>
+<script src="../controle/function.js"></script>
+</body>
+</html>
