@@ -4,8 +4,9 @@ $NOME = $_REQUEST['nome'];
 $IDADE  =$_REQUEST['idade'];
 $BEBIDA = $_REQUEST['bebida'];
 $ANO_ATUAL = date('Y');
-$IDADE2 = date($ANO_ATUAL, 'Y');
+$IDADE2 = date("Y", strtotime($IDADE));
 
+$IDADE = $ANO_ATUAL - $IDADE2;
 
 
 if(empty($NOME) || empty($IDADE) || empty($BEBIDA)){
@@ -17,20 +18,26 @@ if(empty($NOME) || empty($IDADE) || empty($BEBIDA)){
 
     if($IDADE >= 18 && $BEBIDA == "1"){
         $dados = array(
-            "tipo" => 'success',
-            "mensagem" => 'Você pode consumir bebida alcólica'
+            "tipo" => 'caipirinha.jpg',
+            "mensagem" => 'Você pode consumir bebida alcólica',
+            "debug" => $IDADE2
         );
     } else {
         $dados = array(
-            "tipo" => 'error',
-            "mensagem" => 'Você não pode consumir bebida alcólica'
+            "tipo" => 'caipirinha.jpg',
+            "mensagem"=> 'Você não pode consumir bebida alcólica'
         );
     }
 
-    if($IDADE < 18  && $BEBIDA == "1" || $BEBIDA == "2"){
+    if($BEBIDA == "2"){
         $dados = array(
-            "tipo" => 'success',
-            "mensagem" => 'Você pode consumir essa bebida mesmo sendo menor de idade'
+            "tipo" => 'refrigerante.jpg',
+            "mensagem" => 'Você pode consumir essa bebida'
+        );
+    } else if ($BEBIDA == "3"){
+        $dados = array(
+            "tipo" => 'agua-gas.jpg',
+            "mensagem" => 'Você pode consumir essa bebida'
         );
     }
 
